@@ -17,7 +17,7 @@ int main()
             matrix1[1][1] = matrix2[1][1] = matrix3[1][1] = 0;
     }
     gettimeofday(&tp_s, &tzp_s);
-    for (x = 0; x < 1000; x++)
+    for (x = 0; x < 3; x++)
     {
         sprintf(infilename, "in%d.txt", x + 1);
         sprintf(outfilename, "out%d.txt", x + 1);
