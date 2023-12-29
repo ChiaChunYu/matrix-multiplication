@@ -5,7 +5,7 @@
 int main()
 {
     int raw, col, i = 0, j = 0, k = 0, x = 0;
-    float val;
+    long val;
     long matrix1[MAX][MAX], matrix2[MAX][MAX], matrix3[MAX][MAX];
     char infilename[20], outfilename[20];
     FILE *infile, *outfile;
@@ -17,7 +17,7 @@ int main()
             matrix1[1][1] = matrix2[1][1] = matrix3[1][1] = 0;
     }
     gettimeofday(&tp_s, &tzp_s);
-    for (x = 0; x < 3; x++)
+    for (x = 0; x < 1000; x++)
     {
         sprintf(infilename, "in%d.txt", x + 1);
         sprintf(outfilename, "out%d.txt", x + 1);
@@ -30,7 +30,7 @@ int main()
         {
             for (j = 0; j < col; j++)
             {
-                fscanf(infile, "%f", &val);
+                fscanf(infile, "%ld", &val);
                 matrix1[i][j] = matrix2[i][j] = val;
             }
         }
@@ -52,7 +52,7 @@ int main()
         for (i = 0; i < raw; i++)
         {
             for (j = 0; j < col; j++, val++)
-                fprintf(outfile, "%f\n", matrix3[i][j]);
+                fprintf(outfile, "%ld\n", matrix3[i][j]);
         }
         fclose(infile);
         fclose(outfile);
