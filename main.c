@@ -18,7 +18,7 @@ void *matrix_multiply(void *arg)
 {
 
     ThreadData *data = (ThreadData *)arg;
-    long matrix3[MAX][MAX];
+    long matrix3[MAX][MAX]={};
     FILE *outfile;
     char outfilename[20];
 
